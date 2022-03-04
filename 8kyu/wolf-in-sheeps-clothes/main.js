@@ -48,4 +48,4 @@ function wolfDetector(arr) {
     }
 }
 
-wolfDetector(["sheep", "sheep", "sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "wolf"])
+wolfDetector(["sheep", "sheep", "sheep", "wolf", "sheep", "sheep", "sheep", "sheep"])
