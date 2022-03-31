@@ -12,8 +12,10 @@
 
 
 function toDayOfYear(arr) {
+    console.log(arr)
 
-    // let's make variables for the day, month, and year indices for easier management later.
+    // Let's make variables for the day, month, and year indices for easier management later.
+    // There is an inconsistancy in the problem prompt:  the date is stated to be formatted (M,D,YYYY), but is in fact read as (D,M,YYYY) when examples are given (and in the test cases on codewars.com)
     let month = arr[1];
     let day = arr[0];
     let year = arr[2];
@@ -23,16 +25,19 @@ function toDayOfYear(arr) {
 
     // Conditional logic to determine if the year is a leap year:
     // If the year can be evenly divided by 100, it is NOT a leap year
-    if (year % 100 === 0) {
+    if (year % 100 === 0 && year % 400 !== 0) {
         isLeapYear = false;
+        console.log('not leap year, failed 100 year')
 
     // UNLESS the year is also evenly divisible by 400.
     } else if (year % 100 === 0 && year % 400 === 0){
         isLeapYear = true;
+        console.log('is leap year, passed 2')
 
     // And if the year is evenly divisible by 4, but not 100, it is a leap year
     } else if (year % 4 === 0 && year % 100 !== 0){
         isLeapYear = true;
+        console.log('is leap year, passed 3')
     };
 
     // Define two arrays which include the number of days in each month
@@ -54,7 +59,7 @@ function toDayOfYear(arr) {
 
             // Add the number of days into the current month to the summed total.
             let dayTotal = sumMonthDays + day;
-                // console.log(`${dayTotal} days total.`)
+                console.log(`${dayTotal} days total.`)
 
             // Return that variable which represents the total number of days up to the date in the argument (inclusive).
             return dayTotal
@@ -72,7 +77,7 @@ function toDayOfYear(arr) {
 
             // Add the number of days into the current month to the summed total.
             let dayTotal = sumMonthDays + day;
-                // console.log(`${dayTotal} days total.`)
+                console.log(`${dayTotal} days total.`)
 
             // Return that variable which represents the total number of days up to the date in the argument (inclusive).
             return dayTotal
@@ -84,4 +89,4 @@ function toDayOfYear(arr) {
 // toDayOfYear([4,1,1999])
 // toDayOfYear([25, 12, 2017]);
 // toDayOfYear([5, 11, 1604]);
-toDayOfYear([11,06,1984])
+toDayOfYear([31, 12, 2000]);
