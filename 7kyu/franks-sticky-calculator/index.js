@@ -44,10 +44,10 @@
 function stickyCalc (operation, val1, val2){
 
     // Round the number for val1
-    let value1 = Math.round(val1)
+    let value1 = Math.round(val1);
 
     // Round the number for val2
-    let value2 = Math.round(val2)
+    let value2 = Math.round(val2);
 
 
     // Turn the rounded value for val1 into a string in order to concatinate it with val2
@@ -62,15 +62,14 @@ function stickyCalc (operation, val1, val2){
     if (operation === '+'){
         return(stickyNum + value2);
     } else if (operation === '-'){
-        return stickyNum - value2
+        return stickyNum - value2;
     } else if (operation === '*'){
-        return(stickyNum * value2)
+        return(stickyNum * value2);
     } else if (operation ==='/'){
         // Round the value of a quotient, as it may be a float
-        return(Math.round(stickyNum / value2))
-    }
-
-}
+        return(Math.round(stickyNum / value2));
+    };
+};
 
 //test case
 // stickyCalc ('/', 50.4999, 12.999);cd ..
